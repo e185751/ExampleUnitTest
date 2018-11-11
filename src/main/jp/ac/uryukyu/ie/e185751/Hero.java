@@ -8,7 +8,7 @@ package jp.ac.uryukyu.ie.e185751;
  *  boolean dead; //ヒーローの生死状態。true=死亡。
  * Created by tnal on 2016/11/13.
  *
- *  変数name, hitPoint, attack, deadは、LivingThingの継承により実装。
+ *  変数name、hitPoint、attack、deadは、LivingThingの継承により実装。
  * Arranged by e185751 on 2018/11/11.
  */
 public class Hero extends LivingThing{
@@ -32,10 +32,10 @@ public class Hero extends LivingThing{
      */
     @Override
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint < 0 ) {
-            dead = true;
-            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
+        setHitPoint(getHitPoint() - damage);
+        if( getHitPoint() < 0 ) {
+            setDead(true);
+            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", getName());
         }
     }
 }

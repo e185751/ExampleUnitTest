@@ -8,10 +8,10 @@ package jp.ac.uryukyu.ie.e185751;
  * Created by e185751 on 2018/11/11.
  */
 public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack;
-    boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -40,12 +40,52 @@ public class LivingThing {
 
 
     /**
-     * キャラクターの名前のgetterメソッド。
+     * キャラクターの名前を保存する変数nameのgetterメソッド。
      * @return String
      */
 
     public String getName(){
         return this.name;
+    }
+
+
+    /**
+     * キャラクターの体力残量のデータを保存する変数hitPointのgetterメソッド。
+     * @return int
+     */
+
+    public int getHitPoint(){
+        return this.hitPoint;
+    }
+
+
+    /**
+     * キャラクターの攻撃力のデータを保存する変数attackのgetterメソッド。
+     * @return int
+     */
+
+    public int getAttack(){
+        return this.attack;
+    }
+
+
+    /**
+     * キャラクターの生死状態を保存する変数deadを書き換えるメソッド。
+     * @param dead　生死状態
+     */
+
+    public void setDead(boolean dead){
+        this.dead = dead;
+    }
+
+
+    /**
+     * キャラクターの体力残量を保存する変数hitPointを書き換えるメソッド。
+     * @param hp 体力残量
+     */
+
+    public void setHitPoint(int hp){
+        this.hitPoint = hp;
     }
 
 
