@@ -11,7 +11,7 @@ public class Main {
         System.out.printf("%s vs. %s\n", hero.getName(), enemy.getName());
 
         int turn = 0;
-        while( !hero.isDead() && enemy.isDead() == false ){
+        while( !hero.isDead() && !enemy.isDead() ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
             hero.attack(enemy);
