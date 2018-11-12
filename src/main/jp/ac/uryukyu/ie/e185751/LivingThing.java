@@ -13,13 +13,13 @@ public class LivingThing {
     private int attack;
     private boolean dead;
 
+
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name キャラクターの名
      * @param maximumHP キャラクターのHP
      * @param attack キャラクターの攻撃力
      */
-
     public LivingThing(String name, int maximumHP, int attack){
         this.name = name;
         hitPoint = maximumHP;
@@ -33,9 +33,8 @@ public class LivingThing {
      * getterメソッドと同等。生死をboolean表現しているためメソッド名をisDead()とした。
      * @return boolean
      */
-
     public boolean isDead(){
-        return this.dead;
+        return dead;
     }
 
 
@@ -43,19 +42,17 @@ public class LivingThing {
      * キャラクターの名前を保存する変数nameのgetterメソッド。
      * @return String
      */
-
     public String getName(){
-        return this.name;
+        return name;
     }
 
 
     /**
-     * キャラクターの体力残量のデータを保存する変数hitPointのgetterメソッド。
+     * キャラクターのHPのデータを保存する変数hitPointのgetterメソッド。
      * @return int
      */
-
     public int getHitPoint(){
-        return this.hitPoint;
+        return hitPoint;
     }
 
 
@@ -63,29 +60,44 @@ public class LivingThing {
      * キャラクターの攻撃力のデータを保存する変数attackのgetterメソッド。
      * @return int
      */
-
     public int getAttack(){
-        return this.attack;
+        return attack;
     }
 
 
     /**
-     * キャラクターの生死状態を保存する変数deadを書き換えるメソッド。
+     * キャラクターの生死状態を保存する変数deadを書き換えるsetterメソッド。
      * @param dead　生死状態
      */
-
     public void setDead(boolean dead){
         this.dead = dead;
     }
 
 
     /**
-     * キャラクターの体力残量を保存する変数hitPointを書き換えるメソッド。
-     * @param hp 体力残量
+     * キャラクターのHPを保存する変数hitPointを書き換えるsetterメソッド。
+     * @param hp HP
      */
-
     public void setHitPoint(int hp){
         this.hitPoint = hp;
+    }
+
+
+    /**
+     * キャラクターの攻撃力を保存する変数attackを書き換えるsetterメソッド。
+     * @param attack 攻撃力
+     */
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
+
+    /**
+     * キャラクターの名前を保存する変数nameを書き換えるsetterメソッド。
+     * @param name 名前
+     */
+    public void setName(String name){
+        this.name = name;
     }
 
 
@@ -94,7 +106,6 @@ public class LivingThing {
      * attackに応じて乱数でダメージを算出し、opponent.wounded()によりダメージ処理を実行。
      * @param opponent 攻撃対象
      */
-
     public void attack(LivingThing opponent){
         if (!dead) {
             int damage = (int)(Math.random() * attack);
@@ -103,13 +114,12 @@ public class LivingThing {
         }
     }
 
-
+    
     /**
      * キャラクター自身へ攻撃されたときのダメージ処理をするメソッド。オーバーライドされる。
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
-
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
